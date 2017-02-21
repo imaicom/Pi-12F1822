@@ -12,42 +12,38 @@ int main() {
 
 	delay(500);	
 
-//	delay(500);
-//
-//	dat=wiringPiI2CReadReg8(fd,0);
-//	printf("%x\n",dat);
-	
-//	wiringPiI2CWriteReg8(fd,1,0x00);
- 	wiringPiI2CWriteReg8(fd,0,0x1);
+ 	wiringPiI2CWrite(fd,0x1);
 
 	delay(500);
 
-	dat=wiringPiI2CReadReg8(fd,0);
+	dat=wiringPiI2CRead(fd);
 	printf("%x\n",dat);
-	wiringPiI2CWriteReg8(fd,1,0x10);
+	wiringPiI2CWrite(fd,0x1);
 	
 	delay(500);
 
-	dat=wiringPiI2CReadReg8(fd,0);
+	dat=wiringPiI2CRead(fd);
     printf("%x\n",dat);
+	wiringPiI2CWrite(fd,0x1);
+
 
 	delay(500);
 
-	dat=wiringPiI2CReadReg8(fd,0);
+	dat=wiringPiI2CRead(fd);
 	printf("%x\n",dat);
 
 	delay(500);
 	
-	dat=wiringPiI2CReadReg8(fd,0);
+	dat=wiringPiI2CRead(fd);
     printf("%x\n",dat);
 	delay(500);
 
-	dat=wiringPiI2CReadReg8(fd,0);
+	dat=wiringPiI2CRead(fd);
 	printf("%x\n",dat);
 
 	delay(500);
 	
-	dat=wiringPiI2CReadReg8(fd,0);
+	dat=wiringPiI2CRead(fd);
     printf("%x\n",dat);
 
 	return(0);	
