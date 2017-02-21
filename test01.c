@@ -18,8 +18,8 @@ int main() {
 
 	dat=wiringPiI2CRead(fd);
 	printf("%x\n",dat);
-	wiringPiI2CWrite(fd,0x1);
-	
+	wiringPiI2CWrite(fd,0x2);
+	  
 	delay(500);
 
 	dat=wiringPiI2CRead(fd);
