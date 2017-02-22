@@ -10,42 +10,25 @@ int main() {
 
 	fd = wiringPiI2CSetup(8);
 
-	delay(500);	
+	while(1) {
+		delay(200);wiringPiI2CWrite(fd,0);
 
- 	wiringPiI2CWrite(fd,0x1);
-
-	delay(500);
-
-	dat=wiringPiI2CRead(fd);
-	printf("%x\n",dat);
-	wiringPiI2CWrite(fd,0x2);
-	  
-	delay(500);
-
-	dat=wiringPiI2CRead(fd);
-    printf("%x\n",dat);
-	wiringPiI2CWrite(fd,0x1);
-
-
-	delay(500);
-
-	dat=wiringPiI2CRead(fd);
-	printf("%x\n",dat);
-
-	delay(500);
+		delay(200);wiringPiI2CWrite(fd,2);
+		delay(200);wiringPiI2CWrite(fd,1);
+		delay(200);wiringPiI2CWrite(fd,4);
+		delay(200);wiringPiI2CWrite(fd,3);
+		delay(200);wiringPiI2CWrite(fd,6);
+		delay(200);wiringPiI2CWrite(fd,5);
 	
-	dat=wiringPiI2CRead(fd);
-    printf("%x\n",dat);
-	delay(500);
+		delay(200);wiringPiI2CWrite(fd,7);
+		if(wiringPiI2CRead(fd)== 0xAA) return(0);
+	};
 
-	dat=wiringPiI2CRead(fd);
-	printf("%x\n",dat);
+//	delay(500);
+//	dat=wiringPiI2CRead(fd);
+//	printf("%x\n",dat);
+//	wiringPiI2CWrite(fd,0x2);
 
-	delay(500);
-	
-	dat=wiringPiI2CRead(fd);
-    printf("%x\n",dat);
-
-	return(0);	
+		
 }
 
