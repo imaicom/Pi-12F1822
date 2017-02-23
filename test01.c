@@ -12,16 +12,15 @@ int main() {
 
 	while(1) {
 		delay(200);wiringPiI2CWrite(fd,0);
-
 		delay(200);wiringPiI2CWrite(fd,2);
 		delay(200);wiringPiI2CWrite(fd,1);
 		delay(200);wiringPiI2CWrite(fd,4);
 		delay(200);wiringPiI2CWrite(fd,3);
 		delay(200);wiringPiI2CWrite(fd,6);
 		delay(200);wiringPiI2CWrite(fd,5);
-	
 		delay(200);wiringPiI2CWrite(fd,7);
-		if(wiringPiI2CRead(fd)== 0xAA) return(0);
+		
+		if(wiringPiI2CReadReg8(fd,1)== 0xAA) return(0);
 	};
 
 //	delay(500);
