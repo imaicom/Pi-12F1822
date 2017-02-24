@@ -1,7 +1,8 @@
 // cc -o test01 test01.c -lwiringPi -lm
 #include <stdio.h>
 #include <wiringPi.h>
-#include <wiringPiI2C.h>
+#include "wiringPiI2C.h"
+#include "wiringPiI2C.c"
 #include <math.h>
 
 int main() {
