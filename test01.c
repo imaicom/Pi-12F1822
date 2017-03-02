@@ -23,8 +23,16 @@ int main() {
 		
 		if(wiringPiI2CReadReg8(fd,1)== 0xAA) return(0);
 		*/
-		wiringPiI2CWrite(fd,10);
-		dat=wiringPiI2CReadReg8(fd,6);
+		wiringPiI2CWrite(fd,0);
+		dat=wiringPiI2CReadReg8(fd,3);
+		printf("%x ",dat);
+		dat=wiringPiI2CReadReg8(fd,2);
+		printf("%x ",dat);
+		dat=wiringPiI2CReadReg8(fd,1);
+		printf("%x ",dat);
+		dat=wiringPiI2CReadReg8(fd,0);
+		printf("%x ",dat);
+		dat=wiringPiI2CReadReg8(fd,3);
 		printf("%x ",dat);
 		dat=wiringPiI2CReadReg8(fd,2);
 		printf("%x ",dat);
