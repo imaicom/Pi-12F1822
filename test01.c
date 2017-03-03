@@ -6,7 +6,7 @@
 
 int main() {
 	int fd;
-	short dat,x,y,z;
+	short dat;
 
 	fd = wiringPiI2CSetup(8);
 
@@ -24,4 +24,3 @@ int main() {
 
 	};		
 }
-
