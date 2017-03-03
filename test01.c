@@ -23,26 +23,26 @@ int main() {
 		
 		if(wiringPiI2CReadReg8(fd,1)== 0xAA) return(0);
 		*/
-		wiringPiI2CWrite(fd,0);
-		dat=wiringPiI2CReadReg8(fd,3);
+		
+//		dat = wiringPiI2CReadReg8(fd,3); // 12F1822 rcv_data[0] = 3 , dat = snd_data[0]
+//		printf("%x ",dat);
+//		dat = wiringPiI2CReadReg8(fd,2); // 12F1822 rcv_data[0] = 2 , dat = snd_data[0]
+//		printf("%x ",dat);
+//		dat = wiringPiI2CReadReg8(fd,1); // 12F1822 rcv_data[0] = 1 , dat = snd_data[0]
+//		printf("%x ",dat);
+//		dat = wiringPiI2CReadReg8(fd,0); // 12F1822 rcv_data[0] = 0 , dat = snd_data[0]
+//		printf("%x ",dat);
+//		wiringPiI2CWrite(fd,3); // 12F1822 rcv_data[1] = 0x04
+		wiringPiI2CWrite(fd,0xF0);
+		dat = wiringPiI2CReadReg16(fd,0xA0);
 		printf("%x ",dat);
-		dat=wiringPiI2CReadReg8(fd,2);
-		printf("%x ",dat);
-		dat=wiringPiI2CReadReg8(fd,1);
-		printf("%x ",dat);
-		dat=wiringPiI2CReadReg8(fd,0);
-		printf("%x ",dat);
-		dat=wiringPiI2CReadReg8(fd,3);
-		printf("%x ",dat);
-		dat=wiringPiI2CReadReg8(fd,2);
-		printf("%x ",dat);
-		dat=wiringPiI2CReadReg8(fd,1);
-		printf("%x ",dat);
-		dat=wiringPiI2CReadReg8(fd,0);
-		printf("%x ",dat);
-		dat=wiringPiI2CReadReg16(fd,1);
+//		delay(100);
+		
+		wiringPiI2CWrite(fd,0xF4);
+		dat = wiringPiI2CReadReg16(fd,0xA4);
 		printf("%x\n",dat);
-		delay(100);	};
+//		delay(100);
+	};
 
 //	delay(500);
 //	dat=wiringPiI2CRead(fd);
