@@ -12,11 +12,11 @@ int main() {
 
 	while(1) {
 		
-		wiringPiI2CWrite(fd,0xA0); // PA0ポートのAN0を指定する
+		wiringPiI2CWrite(fd,0xA0); // RA0ポートのAN0を指定する
 		dat = wiringPiI2CReadReg16(fd,0xAD); // AD変換されたデータを読む
 		printf("%x ",dat);
 		
-		wiringPiI2CWrite(fd,0xA4); // PA4ポートのAN3を指定する
+		wiringPiI2CWrite(fd,0xA4); // RA4ポートのAN3を指定する
 		dat = wiringPiI2CReadReg16(fd,0xAD);
 		printf("%x\n",dat);
 		
