@@ -11,7 +11,6 @@ int main() {
 	fd = wiringPiI2CSetup(8);
 
 	while(1) {
-		
 		wiringPiI2CWrite(fd,0xA0); // RA0ポートのAN0を指定する
 		dat = wiringPiI2CReadReg16(fd,0xAD); // AD変換されたデータを読む
 		printf("%x ",dat);
@@ -21,6 +20,5 @@ int main() {
 		printf("%x\n",dat);
 		
 		delay(10);
-
 	};		
 }
