@@ -7,7 +7,7 @@
 
 int main() {
 	int fd , dat;
-	char snd_data[8],rcv_data[8];
+	unsigned char snd_data[8],rcv_data[8];
 
 	fd = wiringPiI2CSetup(8); // I2Cのアドレス8番へ接続されているPIC 12F1822へアクセスする
 	
