@@ -1,6 +1,6 @@
 // cc -o test01 test01.c -lwiringPi -lm
 #include <stdio.h>
-#include <unistd.h>
+#include <unistd.h>	// write,readを使う宣言
 #include <wiringPi.h>
 #include <wiringPiI2C.h>
 #include <math.h>
