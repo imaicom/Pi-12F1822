@@ -34,6 +34,13 @@ int main() {
 		// wiringPiライブラリで書いてみた		
 		wiringPiI2CWrite(fd,0xA4); // RA4ポートのAN3を指定する
 		dat = wiringPiI2CReadReg16(fd,0xAD); // AD変換されたデータを読む
+		printf("%04x ",dat);
+		
+		snd_data[0] = 0xAA; write(fd,snd_data,1); // 4バイト送信を指定する
+		read(fd,rcv_data,4); // 4バイト受信をする
+		dat = (rcv_data[1] << 8) + rcv_data[0];
+		printf("%04x ",dat);
+		dat = (rcv_data[3] << 8) + rcv_data[2];
 		printf("%04x\n",dat);
 		
 		delay(100);
