@@ -1,4 +1,4 @@
-// cc -o test01 test01.c -lwiringPi -lm
+// cc -o main main.c -lwiringPi -lm
 #include <stdio.h>
 #include <unistd.h>	// write,readを使う宣言
 #include <wiringPi.h>
